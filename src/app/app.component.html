@@ -1,0 +1,45 @@
+<!-- <hello name="{{ name }}"></hello>
+<p>
+  Start editing to see some magic happen :)
+</p> -->
+
+<div>
+  <h4>Year:</h4>
+  <input
+    type="number"
+    [(ngModel)]="year"
+    (change)="changeYear()"
+    style="width:172px"
+  />
+  <h4>Country:</h4>
+  <input
+    (click)="getCountries()"
+    type="text"
+    (change)="changeKeyValue(searchField)"
+    [(ngModel)]="searchField"
+    style="width:172px"
+    value="{{ searchField }}"
+  />
+  <div *ngIf="hidden">
+    <select
+      style="width:180px"
+      (change)="change(c_selected)"
+      [(ngModel)]="c_selected"
+      multiple
+    >
+      <option *ngFor="let country of full_contri">{{ country }}</option>
+    </select>
+  </div>
+
+  <input
+    type="image"
+    src="assets/search.svg"
+    width="20px"
+    (click)="searchNeighbour()"
+  />
+</div>
+
+<!-- Recommended countries -->
+<div>
+  <h3>Recommended Destinations</h3>
+</div>
